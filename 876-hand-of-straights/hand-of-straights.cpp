@@ -1,7 +1,7 @@
 class Solution {
-public:
-    bool isNStraightHand(vector<int>& hand, int groupSize) {
-         map<int, int> count;
+ public:
+  bool isNStraightHand(vector<int>& hand, int groupSize) {
+    map<int, int> count;
 
     for (const int card : hand)
       ++count[card];
@@ -17,5 +17,5 @@ public:
     }
 
     return true;
-    }
+  }
 };
