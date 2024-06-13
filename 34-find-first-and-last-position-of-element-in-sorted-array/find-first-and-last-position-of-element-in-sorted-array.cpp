@@ -1,46 +1,10 @@
 class Solution {
-public:
-    vector<int> searchRange(vector<int>& nums, int target) {
-        int n = nums.size();
-        
-        if(n == 0) return {-1, -1};
-        
-        int left = 0, right = n-1;
-        
-        //find left boundary
-        while(left <= right){
-            int mid = (left+right) >> 1;
-            // cout << left << ", " << mid << ", " << right << endl;
-            
-            if(nums[mid] < target){
-                left = mid+1;
-            }else{
-                right = mid-1;
-            }
-        }
-        
-        if(left >= n || nums[left] != target){
-            return {-1, -1};
-        }
-        
-        vector<int> ans = {left};
-        
-        //find right boundary
-        left = 0;
-        right = n-1;
-        while(left <= right){
-            int mid = (left+right) >> 1;
-            // cout << left << ", " << mid << ", " << right << endl;
-            
-            if(nums[mid] > target){
-                right = mid-1;
-            }else{
-                left = mid+1;
-            }
-        }
-        
-        ans.push_back(right);
-        
-        return ans;
-    }
+ public:
+  vector<int> searchRange(vector<int>& nums, int target) {
+    const int l = ranges::lower_bound(nums, target) - nums.begin();
+    if (l == nums.size() || nums[l] != target)
+      return {-1, -1};
+    const int r = ranges::upper_bound(nums, target) - nums.begin() - 1;
+    return {l, r};
+  }
 };
