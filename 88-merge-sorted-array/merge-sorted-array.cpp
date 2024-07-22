@@ -5,8 +5,7 @@ public:
         while(m>0 && n>0){
             if(nums1[m-1]> nums2[n-1]){
                 nums1[e]= nums1[m-1];
-                m--;
-                
+                m--;    
             }
             else{
                 nums1[e] = nums2[n-1];
