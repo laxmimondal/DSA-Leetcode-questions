@@ -14,7 +14,6 @@ public:
             e--;
         }
         while(n>0){
-            
             nums1[e]=nums2[n-1];
             n--;
             e--;
