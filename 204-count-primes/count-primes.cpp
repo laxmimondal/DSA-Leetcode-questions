@@ -2,10 +2,11 @@ class Solution {
 
 public:
     int countPrimes(int n) {
-        if (n <= 2) return 0;
+        if (n <= 2) {
+        return 0;}
     bool* isPrime = new bool[n]; //declaring boolean array
-    for( int i =2 ; i < n ; i++)
-        isPrime[i] = true;
+    for( int i =2 ; i < n ; i++){
+        isPrime[i] = true;}
     
     for ( int i = 2 ; i*i < n ; i++){
         if(! isPrime[i]) continue ;
