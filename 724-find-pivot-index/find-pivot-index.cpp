@@ -11,11 +11,12 @@ public:
            
              int ls = cs;
              int rs = sum - cs- nums[x];
-              cs += nums[x];
+             
              // Check if the current index is the pivot index
             if (ls == rs) {
                 return x;
-            }       
+            } 
+             cs += nums[x];      
         }
    // Return -1 if no pivot index is found
         return -1;
